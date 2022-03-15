@@ -12,13 +12,13 @@ import com.example.tuan05.model.Product;
 import com.example.tuan05.R;
 import java.util.List;
 
-public class ProductApdapter extends BaseAdapter {
+public class ProductAdapter extends BaseAdapter {
     private Context context;
     private int idLayout;
     private List<Product> listProduct;
     private int positionSelect = -1;
 
-    public ProductApdapter(Context context, int idLayout, List<Product> listProduct) {
+    public ProductAdapter(Context context, int idLayout, List<Product> listProduct) {
         this.context = context;
         this.idLayout = idLayout;
         this.listProduct = listProduct;
@@ -49,11 +49,13 @@ public class ProductApdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(parent.getContext()).inflate(idLayout, parent, false);
         }
+
         TextView tvmoTa = convertView.findViewById(R.id.txtAbout);
         TextView tvProductName = (TextView) convertView.findViewById(R.id.txtName);
         TextView tvProductPrice = (TextView) convertView.findViewById(R.id.txtPrice);
         ImageView imageView = (ImageView) convertView.findViewById(R.id.imageView);
         final Product product = listProduct.get(position);
+
 
         if (listProduct != null && !listProduct.isEmpty()) {
             tvmoTa.setText(product.getAbout());

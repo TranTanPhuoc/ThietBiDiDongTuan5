@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tuan05">
         <activity
-            android:name=".MainActivity4_a"
+            android:name=".MainActivity5_aitem"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity5a"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
