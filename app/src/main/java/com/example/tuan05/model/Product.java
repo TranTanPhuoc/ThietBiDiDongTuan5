@@ -1,6 +1,8 @@
 package com.example.tuan05.model;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private String name;
     private String about;
     private int img;

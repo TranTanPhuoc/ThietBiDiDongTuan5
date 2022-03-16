@@ -1,6 +1,8 @@
 package com.example.tuan05.apdapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +10,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.tuan05.MainActivity5_aitem;
 import com.example.tuan05.model.Product;
 import com.example.tuan05.R;
+
+import java.io.Serializable;
 import java.util.List;
 
 public class ProductAdapter extends BaseAdapter {
@@ -63,6 +68,14 @@ public class ProductAdapter extends BaseAdapter {
             imageView.setImageResource(product.getImg());
             tvProductPrice.setText(product.getPrice());
         }
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MainActivity5_aitem.class);
+                intent.putExtra("product", product);
+                context.startActivity(intent);
+            }
+        });
         return convertView;
     }
 }
