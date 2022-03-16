@@ -7,6 +7,7 @@ public class Product implements Serializable {
     private String about;
     private int img;
     private String price;
+    private  String  type;
 
     public String getName() {
         return name;
@@ -40,11 +41,20 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public Product(String name, String about, int img, String price) {
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Product(String name, String about, int img, String price, String type) {
         this.name = name;
         this.about = about;
         this.img = img;
         this.price = price;
+        this.type = type;
     }
 
     @Override
@@ -52,8 +62,9 @@ public class Product implements Serializable {
         return "Product{" +
                 "name='" + name + '\'' +
                 ", about='" + about + '\'' +
-                ", img='" + img + '\'' +
+                ", img=" + img +
                 ", price='" + price + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }
